@@ -1,0 +1,271 @@
+hash: 9b6839fc1d0fcb72286ddebd38d65143a72d590c52308719ce6840e9d9355b89
+updated: 2019-03-04T10:01:25.70905+07:00
+imports:
+- name: cloud.google.com/go
+  version: 7e92b4d51047c91ec65bab1144f1c3183d7db9d6
+  subpackages:
+  - compute/metadata
+  - firestore
+  - firestore/apiv1
+  - iam
+  - internal
+  - internal/btree
+  - internal/fields
+  - internal/optional
+  - internal/trace
+  - internal/version
+  - storage
+- name: firebase.google.com/go
+  version: f1dcecc6328cf3857fc970f450cca3965a90b422
+  subpackages:
+  - auth
+  - db
+  - iid
+  - internal
+  - messaging
+  - storage
+- name: github.com/appleboy/gin-jwt
+  version: 18c777042be3ecc5cb3bf79cd24cbd6b28683cdc
+- name: github.com/btcsuite/btcd
+  version: ed77733ec07dfc8a513741138419b8d9d3de9d2d
+  subpackages:
+  - btcec
+  - chaincfg
+  - chaincfg/chainhash
+  - wire
+- name: github.com/btcsuite/btcutil
+  version: 4c204d6978034c001714728401fcd63060d568b4
+  subpackages:
+  - base58
+  - bech32
+- name: github.com/constant-money/constant-web-api
+  version: 6fbcd8bde859ae2ad08678249f04e28e92a9b019
+  subpackages:
+  - api
+  - config
+  - daos
+  - database
+  - helpers
+  - models
+  - serializers
+  - services
+  - services/3rd/coinbase
+  - services/3rd/facebook
+  - services/3rd/google
+  - services/3rd/primetrust
+  - services/3rd/primetrust/models
+  - services/3rd/sendgrid
+  - templates/email
+- name: github.com/ethereum/go-ethereum
+  version: 9dc5d1a915ac0e0bd8429d6ac41df50eec91de5f
+  subpackages:
+  - common
+  - common/hexutil
+  - common/math
+  - crypto
+  - crypto/secp256k1
+  - rlp
+- name: github.com/gin-contrib/cors
+  version: cf4846e6a636a76237a28d9286f163c132e841bc
+- name: github.com/gin-contrib/sse
+  version: 22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae
+- name: github.com/gin-gonic/gin
+  version: b869fe1415e4b9eb52f247441830d502aece2d4d
+  subpackages:
+  - binding
+  - json
+  - render
+- name: github.com/go-sql-driver/mysql
+  version: 72cd26f257d44c1114970e19afddcd812016007e
+- name: github.com/golang/protobuf
+  version: 1325a051a2753cd67556b182843b1b693d0854cd
+  subpackages:
+  - proto
+  - protoc-gen-go/descriptor
+  - ptypes
+  - ptypes/any
+  - ptypes/duration
+  - ptypes/empty
+  - ptypes/struct
+  - ptypes/timestamp
+  - ptypes/wrappers
+- name: github.com/googleapis/gax-go
+  version: ddfab93c3faef4935403ac75a7c11f0e731dc181
+  subpackages:
+  - v2
+- name: github.com/hashicorp/golang-lru
+  version: 7087cb70de9f7a8bc0a10c375cb0d2280a8edf9c
+  subpackages:
+  - simplelru
+- name: github.com/jinzhu/gorm
+  version: 472c70caa40267cb89fd8facb07fe6454b578626
+- name: github.com/jinzhu/inflection
+  version: 04140366298a54a039076d798123ffa108fff46c
+- name: github.com/json-iterator/go
+  version: 2433035e513208b0f7bd5b50d0aecd889b2c1ff8
+- name: github.com/mattn/go-isatty
+  version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
+- name: github.com/mitchellh/mapstructure
+  version: 3536a929edddb9a5b34bd6861dc4a9647cb459fe
+- name: github.com/modern-go/concurrent
+  version: bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94
+- name: github.com/modern-go/reflect2
+  version: 94122c33edd36123c84d5368cfb2b69df93a0ec8
+- name: github.com/pkg/errors
+  version: ba968bfe8b2f7e042a574c888954fccecfa385b4
+- name: github.com/sendgrid/rest
+  version: 8f995deebcbbba440a60746115fdb5524e7cf3fc
+- name: github.com/sendgrid/sendgrid-go
+  version: 8caf17aa96b4a98bae8bd216878dd50ff12897b5
+  subpackages:
+  - helpers/mail
+- name: github.com/ugorji/go
+  version: 7d51bbe6161dcb8f32a1252c27668ce36e3ef16b
+  subpackages:
+  - codec
+- name: go.opencensus.io
+  version: dc0ac5c2c858512c103d555317a3039ede8637fa
+  subpackages:
+  - exemplar
+  - internal
+  - internal/tagencoding
+  - plugin/ocgrpc
+  - plugin/ochttp
+  - plugin/ochttp/propagation/b3
+  - stats
+  - stats/internal
+  - stats/view
+  - tag
+  - trace
+  - trace/internal
+  - trace/propagation
+  - trace/tracestate
+- name: go.uber.org/atomic
+  version: 1ea20fb1cbb1cc08cbd0d913a96dead89aa18289
+- name: go.uber.org/multierr
+  version: 3c4937480c32f4c13a875a1829af76c98ca3d40a
+- name: go.uber.org/zap
+  version: ff33455a0e382e8a81d14dd7c922020b6b5e7982
+  subpackages:
+  - buffer
+  - internal/bufferpool
+  - internal/color
+  - internal/exit
+  - zapcore
+- name: golang.org/x/crypto
+  version: ff983b9c42bc9fbf91556e191cc8efb585c16908
+  subpackages:
+  - bcrypt
+  - blowfish
+  - ripemd160
+  - sha3
+- name: golang.org/x/net
+  version: ed066c81e75eba56dd9bd2139ade88125b855585
+  subpackages:
+  - context
+  - context/ctxhttp
+  - http/httpguts
+  - http2
+  - http2/hpack
+  - idna
+  - internal/timeseries
+  - trace
+- name: golang.org/x/oauth2
+  version: e64efc72b421e893cbf63f17ba2221e7d6d0b0f3
+  subpackages:
+  - google
+  - internal
+  - jws
+  - jwt
+- name: golang.org/x/sys
+  version: 770c60269bf0ef965e9e7ac8bedcb6bca2a1cefd
+  subpackages:
+  - unix
+- name: golang.org/x/text
+  version: 7922cc490dd5a7dbaa7fd5d6196b49db59ac042f
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
+- name: google.golang.org/api
+  version: 3127cb28a723bbc4166c461077c944c405ac4bf8
+  subpackages:
+  - gensupport
+  - googleapi
+  - googleapi/internal/uritemplates
+  - googleapi/transport
+  - identitytoolkit/v3
+  - internal
+  - iterator
+  - option
+  - storage/v1
+  - transport
+  - transport/grpc
+  - transport/http
+  - transport/http/internal/propagation
+- name: google.golang.org/appengine
+  version: e9657d882bb81064595ca3b56cbe2546bbabf7b1
+  subpackages:
+  - cloudsql
+  - internal
+  - internal/app_identity
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/modules
+  - internal/remote_api
+  - internal/socket
+  - internal/urlfetch
+  - socket
+  - urlfetch
+- name: google.golang.org/genproto
+  version: 4f5b463f9597cbe0dd13a6a2cd4f85e788d27508
+  subpackages:
+  - googleapis/api/annotations
+  - googleapis/firestore/v1
+  - googleapis/iam/v1
+  - googleapis/rpc/code
+  - googleapis/rpc/status
+  - googleapis/type/latlng
+- name: google.golang.org/grpc
+  version: 914c52b240b05e4562b1d09e5e7cf3c57495d442
+  subpackages:
+  - balancer
+  - balancer/base
+  - balancer/roundrobin
+  - binarylog/grpc_binarylog_v1
+  - codes
+  - connectivity
+  - credentials
+  - credentials/internal
+  - credentials/oauth
+  - encoding
+  - encoding/proto
+  - grpclog
+  - internal
+  - internal/backoff
+  - internal/binarylog
+  - internal/channelz
+  - internal/envconfig
+  - internal/grpcrand
+  - internal/grpcsync
+  - internal/syscall
+  - internal/transport
+  - keepalive
+  - metadata
+  - naming
+  - peer
+  - resolver
+  - resolver/dns
+  - resolver/passthrough
+  - stats
+  - status
+  - tap
+- name: gopkg.in/dgrijalva/jwt-go.v3
+  version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
+- name: gopkg.in/go-playground/validator.v8
+  version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
+- name: gopkg.in/yaml.v2
+  version: 7f97868eec74b32b0982dd158a51a446d1da7eb5
+testImports: []
