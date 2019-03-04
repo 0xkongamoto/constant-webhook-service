@@ -53,7 +53,6 @@ func main() {
 		reserveDAO = daos.NewReserve()
 		txDAO      = daos.NewTx()
 		hookDAO    = daos.NewHook()
-		countryDAO = daos.NewCountry()
 
 		collateralLoanDAO = daos.NewCollateralLoan()
 		collateralDAO     = daos.NewCollateral()
@@ -74,9 +73,6 @@ func main() {
 		// hook service
 		hookSvc = services.NewHookService(hookDAO)
 
-		// country service
-		countrySvc = services.NewCountryService(countryDAO)
-
 		collateralLoanSvc = services.InitCollateralLoanService(userDAO, collateralDAO, collateralLoanDAO, coinbaseSvc, firebaseDB, emailHelper)
 	)
 
@@ -90,7 +86,7 @@ func main() {
 		AllowHeaders:     []string{"Origin", "Content-Length", "Content-Type", "Authorization"},
 		MaxAge:           12 * time.Hour,
 	}))
-	svr := api.NewServer(r, userSvc, reserveSvc, localSrv, logger, storageSvc, hookSvc, countrySvc, collateralLoanSvc, conf)
+	svr := api.NewServer(r, userSvc, reserveSvc, localSrv, hookSvc, collateralLoanSvc, logger, conf)
 	svr.Routes()
 
 	if err := r.Run(fmt.Sprintf(":%d", conf.Port)); err != nil {

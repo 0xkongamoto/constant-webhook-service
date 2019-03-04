@@ -9,16 +9,15 @@ import (
 	"go.uber.org/zap"
 )
 
+// Server : struct
 type Server struct {
 	g                 *gin.Engine
 	userSvc           *services.User
 	reserveSvc        *services.ReserveService
 	localSrv          *services.LocalService
-	logger            *zap.Logger
-	storageSvc        *services.StorageService
 	hookSvc           *services.HookService
-	countrySvc        *services.CountryService
 	collateralLoanSvc *services.CollateralLoanService
+	logger            *zap.Logger
 	config            *config.Config
 }
 
@@ -45,17 +44,23 @@ func (s *Server) pagingFromContext(c *gin.Context) (int, int) {
 }
 
 // NewServer : userSvc, reserveSvc, localSrv
-func NewServer(g *gin.Engine, userSvc *services.User, reserveSvc *services.ReserveService, localSrv *services.LocalService, logger *zap.Logger, storageSvc *services.StorageService, hookSvc *services.HookService, countrySvc *services.CountryService, collateralLoanSvc *services.CollateralLoanService, config *config.Config) *Server {
+func NewServer(g *gin.Engine,
+	userSvc *services.User,
+	reserveSvc *services.ReserveService,
+	localSrv *services.LocalService,
+	hookSvc *services.HookService,
+	collateralLoanSvc *services.CollateralLoanService,
+	logger *zap.Logger,
+	config *config.Config) *Server {
+
 	return &Server{
 		g:                 g,
 		userSvc:           userSvc,
 		reserveSvc:        reserveSvc,
 		localSrv:          localSrv,
-		logger:            logger,
-		storageSvc:        storageSvc,
-		hookSvc:           hookSvc,
-		countrySvc:        countrySvc,
 		collateralLoanSvc: collateralLoanSvc,
+		hookSvc:           hookSvc,
+		logger:            logger,
 		config:            config,
 	}
 }
