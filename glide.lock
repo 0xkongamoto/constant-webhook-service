@@ -1,5 +1,5 @@
-hash: 9b6839fc1d0fcb72286ddebd38d65143a72d590c52308719ce6840e9d9355b89
-updated: 2019-03-04T10:01:25.70905+07:00
+hash: ae1fceb24ad6442943b6a95d2d8468c81ff90e35900baa11c7b81f986a047ed5
+updated: 2019-03-04T16:00:05.866843+07:00
 imports:
 - name: cloud.google.com/go
   version: 7e92b4d51047c91ec65bab1144f1c3183d7db9d6
@@ -39,7 +39,7 @@ imports:
   - base58
   - bech32
 - name: github.com/constant-money/constant-web-api
-  version: 6fbcd8bde859ae2ad08678249f04e28e92a9b019
+  version: 991b6b4279dbaf5212732f2d71234e5f269f30c9
   subpackages:
   - api
   - config
@@ -119,6 +119,12 @@ imports:
   version: 8caf17aa96b4a98bae8bd216878dd50ff12897b5
   subpackages:
   - helpers/mail
+- name: github.com/stretchr/testify
+  version: ffdc059bfe9ce6a4e144ba849dbedead332c6053
+  subpackages:
+  - assert
+  - require
+  - suite
 - name: github.com/ugorji/go
   version: 7d51bbe6161dcb8f32a1252c27668ce36e3ef16b
   subpackages:
@@ -262,10 +268,16 @@ imports:
   - stats
   - status
   - tap
-- name: gopkg.in/dgrijalva/jwt-go.v3
-  version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
 - name: gopkg.in/go-playground/validator.v8
   version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
 - name: gopkg.in/yaml.v2
   version: 7f97868eec74b32b0982dd158a51a446d1da7eb5
-testImports: []
+testImports:
+- name: github.com/davecgh/go-spew
+  version: d8f796af33cc11cb798c1aaeb27a4ebc5099927d
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: 5d4384ee4fb2527b0a1256a821ebfc92f91efefc
+  subpackages:
+  - difflib
