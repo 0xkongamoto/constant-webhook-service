@@ -9,6 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	"github.com/mitchellh/mapstructure"
+	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )
 
@@ -78,12 +79,30 @@ func (s *Server) ConstantWebhook(c *gin.Context) {
 	case serializers.WebhookTypeCollateralLoan:
 		var data serializers.WebhookCollateralLoanRequest
 		mapstructure.Decode(req.Data, &data)
-
 		err := s.collateralLoanSvc.Webhook(&data)
 		if err != nil {
 			s.logger.Error("s.collateralLoanSvc.Webhook", zap.Error(err))
 		}
 
+	}
+
+	errTnx := daos.WithTransaction(func(tx *gorm.DB) error {
+		if err != nil {
+			hook.Result = err.Error()
+		} else {
+			hook.Result = "success"
+		}
+
+		hook.Status = models.HookStatusProcessed
+		updateErr := s.hookSvc.UpdateHook(&hook)
+		if updateErr != nil {
+			return errors.Wrap(updateErr, "s.hookSvc.UpdateHook")
+		}
+		return nil
+	})
+
+	if errTnx != nil {
+		s.logger.Error("WithTransaction", zap.Error(errTnx))
 	}
 
 	return
