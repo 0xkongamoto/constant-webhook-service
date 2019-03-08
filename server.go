@@ -67,8 +67,11 @@ func main() {
 		firebaseDB  = services.InitFirebase(conf)
 		localSrv    = services.InitLocalService(userDAO, orderDAO, makerDAO, shakerDAO, exchangeDAO, emailHelper, firebaseDB)
 
+		// task service
+		taskSvc = services.NewTaskService(taskDAO, conf)
+
 		// reserve service
-		reserveSvc = services.NewReserveService(reserveDAO, userDAO, txDAO, taskDAO, primetrustService, conf)
+		reserveSvc = services.NewReserveService(reserveDAO, userDAO, txDAO, taskSvc, primetrustService, conf)
 
 		// hook service
 		hookSvc = services.NewHookService(hookDAO)

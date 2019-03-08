@@ -49,6 +49,10 @@ func (s *Server) ConstantWebhook(c *gin.Context) {
 	case serializers.WebhookTypeUserWallet:
 		var data serializers.WebhookUserWalletRequest
 		mapstructure.Decode(req.Data, &data)
+		err := s.userSvc.TransferConstant(&data)
+		if err != nil {
+			s.logger.Error("s.userSvc.TransferConstant", zap.Error(err))
+		}
 
 	case serializers.WebhookTypeKYC:
 		var data serializers.WebhookKYCRequest
