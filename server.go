@@ -47,12 +47,13 @@ func main() {
 		hubspotService    = services.NewHubspotService(conf.HubspotHapiKey)
 		userDAO           = daos.NewUser()
 
-		storageSvc = services.InitStorageService(gsClient, userDAO)
-		userSvc    = services.NewUserService(userDAO, emailHelper, primetrustService, storageSvc, hubspotService, conf.EndpointResetPassword, conf.EndpointVerifyEmail, conf.Environment, conf.WalletCipherKey)
-
 		reserveDAO = daos.NewReserve()
 		txDAO      = daos.NewTx()
 		hookDAO    = daos.NewHook()
+		taskDAO    = daos.NewTask()
+
+		storageSvc = services.InitStorageService(gsClient, userDAO)
+		userSvc    = services.NewUserService(userDAO, reserveDAO, taskDAO, emailHelper, primetrustService, storageSvc, hubspotService, conf)
 
 		collateralLoanDAO = daos.NewCollateralLoan()
 		collateralDAO     = daos.NewCollateral()
@@ -63,7 +64,6 @@ func main() {
 		makerDAO    = daos.NewMaker()
 		shakerDAO   = daos.NewShaker()
 		exchangeDAO = daos.NewExchange()
-		taskDAO     = daos.NewTask()
 		firebaseDB  = services.InitFirebase(conf)
 		localSrv    = services.InitLocalService(userDAO, orderDAO, makerDAO, shakerDAO, exchangeDAO, emailHelper, firebaseDB)
 
