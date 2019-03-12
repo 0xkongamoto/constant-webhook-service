@@ -52,8 +52,9 @@ func main() {
 		storageSvc = services.InitStorageService(gsClient, userDAO)
 		userSvc    = services.NewUserService(userDAO, reserveDAO, taskDAO, emailHelper, primetrustService, storageSvc, hubspotService, conf)
 
-		txDAO   = daos.NewTx()
-		hookDAO = daos.NewHook()
+		masterAddrDAO = daos.NewMasterAddressDAO()
+		txDAO         = daos.NewTx()
+		hookDAO       = daos.NewHook()
 
 		collateralLoanDAO = daos.NewCollateralLoan()
 		collateralDAO     = daos.NewCollateral()
@@ -71,7 +72,7 @@ func main() {
 		taskSvc = services.NewTaskService(taskDAO, conf)
 
 		// reserve service
-		reserveSvc = services.NewReserveService(reserveDAO, userDAO, txDAO, taskSvc, primetrustService, conf)
+		reserveSvc = services.NewReserveService(reserveDAO, userDAO, txDAO, masterAddrDAO, taskSvc, primetrustService, conf)
 
 		// hook service
 		hookSvc = services.NewHookService(hookDAO)
