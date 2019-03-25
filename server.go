@@ -78,7 +78,7 @@ func main() {
 		// hook service
 		hookSvc = services.NewHookService(hookDAO)
 
-		collateralLoanSvc = services.InitCollateralLoanService(userDAO, collateralDAO, collateralLoanDAO, collateralLoanInterestRateDAO, coinbaseSvc, firebaseDB, emailHelper)
+		collateralLoanSvc = services.InitCollateralLoanService(userDAO, collateralDAO, collateralLoanDAO, collateralLoanInterestRateDAO, coinbaseSvc, firebaseDB, emailHelper, conf)
 	)
 
 	r := gin.New()
