@@ -56,9 +56,10 @@ func main() {
 		txDAO         = daos.NewTx()
 		hookDAO       = daos.NewHook()
 
-		collateralLoanDAO = daos.NewCollateralLoan()
-		collateralDAO     = daos.NewCollateral()
-		coinbaseSvc       = coinbase.Init(conf)
+		collateralLoanDAO             = daos.NewCollateralLoan()
+		collateralDAO                 = daos.NewCollateral()
+		collateralLoanInterestRateDAO = daos.NewCollateralLoanInterestRate()
+		coinbaseSvc                   = coinbase.Init(conf)
 
 		// local service
 		orderDAO    = daos.NewOrder()
@@ -77,7 +78,7 @@ func main() {
 		// hook service
 		hookSvc = services.NewHookService(hookDAO)
 
-		collateralLoanSvc = services.InitCollateralLoanService(userDAO, collateralDAO, collateralLoanDAO, coinbaseSvc, firebaseDB, emailHelper)
+		collateralLoanSvc = services.InitCollateralLoanService(userDAO, collateralDAO, collateralLoanDAO, collateralLoanInterestRateDAO, coinbaseSvc, firebaseDB, emailHelper, conf)
 	)
 
 	r := gin.New()
