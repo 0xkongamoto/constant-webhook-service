@@ -66,12 +66,9 @@ func main() {
 		eosSvc = eos.NewEOSPark(conf.EOSConfig, conf.Environment)
 
 		// local service
-		orderDAO    = daos.NewOrder()
-		makerDAO    = daos.NewMaker()
-		shakerDAO   = daos.NewShaker()
 		exchangeDAO = daos.NewExchange()
 		firebaseDB  = services.InitFirebase(conf)
-		localSrv    = services.InitLocalService(userDAO, orderDAO, makerDAO, shakerDAO, exchangeDAO, emailHelper, firebaseDB)
+		localSrv    = services.InitLocalService(exchangeDAO)
 
 		// reserve service
 		reserveSvc = services.NewReserveService(reserveDAO, userDAO, txDAO, masterAddrDAO, taskDAO, primetrustService, eosSvc, conf)

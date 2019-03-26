@@ -38,14 +38,6 @@ func (s *Server) ConstantWebhook(c *gin.Context) {
 	}
 
 	switch req.Type {
-	case serializers.WebhookTypeOrder:
-		var data serializers.WebhookRollbackRequest
-		mapstructure.Decode(req.Data, &data)
-		err := s.localSrv.RollbackMakerRequest(data.ID, data.CanceledOrderID)
-		if err != nil {
-			s.logger.Error("s.localSrv.RollbackMakerRequest", zap.Error(err))
-		}
-
 	case serializers.WebhookTypeUserWallet:
 		var data serializers.WebhookUserWalletRequest
 		mapstructure.Decode(req.Data, &data)
