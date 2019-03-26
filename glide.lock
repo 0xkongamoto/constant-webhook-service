@@ -1,5 +1,5 @@
-hash: 4c2ad8bf67c24025cb5785197d8e793f235c86877b60fb7e2b436007d379374a
-updated: 2019-03-26T10:31:54.106392+07:00
+hash: 8283da62f4827bb9b5a048001c52127a28591cac4a2af772e8381ab7894ba3d5
+updated: 2019-03-26T11:33:02.717064+07:00
 imports:
 - name: cloud.google.com/go
   version: 7e92b4d51047c91ec65bab1144f1c3183d7db9d6
@@ -39,7 +39,7 @@ imports:
   - base58
   - bech32
 - name: github.com/constant-money/constant-web-api
-  version: 960b7cb1e4bceea2b856b5b6f6e38fc593234442
+  version: 4a5dcb43e31821d8e9507cc5d70a8de989d8a330
   vcs: git
   subpackages:
   - api
@@ -53,6 +53,7 @@ imports:
   - services
   - services/3rd/coinbase
   - services/3rd/eos
+  - services/3rd/eos/models
   - services/3rd/facebook
   - services/3rd/google
   - services/3rd/primetrust
