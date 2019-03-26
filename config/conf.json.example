@@ -27,5 +27,10 @@
   "endpoint_reset_password": "",
   "endpoint_verify_email": "",
   "hubspot_hapi_key": "",
-  "wallet_cipher_key": "xxx"
+  "wallet_cipher_key": "xxx",
+  "eos": {
+    "eos_check_account_url": "",
+    "eos_api_key": "",
+    "eos_supply_money_url": ""
+  }
 }

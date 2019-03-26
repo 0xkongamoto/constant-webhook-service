@@ -14,6 +14,7 @@ import (
 	"github.com/constant-money/constant-web-api/daos"
 	"github.com/constant-money/constant-web-api/services"
 	"github.com/constant-money/constant-web-api/services/3rd/coinbase"
+	"github.com/constant-money/constant-web-api/services/3rd/eos"
 	"github.com/constant-money/constant-web-api/services/3rd/primetrust"
 	"github.com/constant-money/constant-web-api/services/3rd/sendgrid"
 	"github.com/constant-money/constant-web-api/templates/email"
@@ -61,6 +62,9 @@ func main() {
 		collateralLoanInterestRateDAO = daos.NewCollateralLoanInterestRate()
 		coinbaseSvc                   = coinbase.Init(conf)
 
+		// eos
+		eosSvc = eos.NewEOSPark(conf.EOSConfig, conf.Environment)
+
 		// local service
 		orderDAO    = daos.NewOrder()
 		makerDAO    = daos.NewMaker()
@@ -69,11 +73,8 @@ func main() {
 		firebaseDB  = services.InitFirebase(conf)
 		localSrv    = services.InitLocalService(userDAO, orderDAO, makerDAO, shakerDAO, exchangeDAO, emailHelper, firebaseDB)
 
-		// task service
-		taskSvc = services.NewTaskService(taskDAO, conf)
-
 		// reserve service
-		reserveSvc = services.NewReserveService(reserveDAO, userDAO, txDAO, masterAddrDAO, taskSvc, primetrustService, conf)
+		reserveSvc = services.NewReserveService(reserveDAO, userDAO, txDAO, masterAddrDAO, taskDAO, primetrustService, eosSvc, conf)
 
 		// hook service
 		hookSvc = services.NewHookService(hookDAO)
