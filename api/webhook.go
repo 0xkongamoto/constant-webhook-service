@@ -24,7 +24,7 @@ func (s *Server) ConstantWebhook(c *gin.Context) {
 
 	hookData, err := json.Marshal(req)
 	hook := models.Hook{
-		Source: models.HookSourcePrimetrust,
+		Source: models.HookSourceEvent,
 		Data:   string(hookData),
 		Status: models.HookStatusNew,
 	}
