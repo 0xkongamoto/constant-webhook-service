@@ -26,6 +26,11 @@ imports:
   - storage
 - name: github.com/appleboy/gin-jwt
   version: 18c777042be3ecc5cb3bf79cd24cbd6b28683cdc
+- name: github.com/boombuler/barcode
+  version: 6c824513baccd76c674ce72112c29ef550187b08
+  subpackages:
+  - qr
+  - utils
 - name: github.com/btcsuite/btcd
   version: ed77733ec07dfc8a513741138419b8d9d3de9d2d
   subpackages:
@@ -117,6 +122,11 @@ imports:
   version: 94122c33edd36123c84d5368cfb2b69df93a0ec8
 - name: github.com/pkg/errors
   version: ba968bfe8b2f7e042a574c888954fccecfa385b4
+- name: github.com/pquerna/otp
+  version: be78767b3e392ce45ea73444451022a6fc32ad0d
+  subpackages:
+  - hotp
+  - totp
 - name: github.com/sendgrid/rest
   version: 8f995deebcbbba440a60746115fdb5524e7cf3fc
 - name: github.com/sendgrid/sendgrid-go
