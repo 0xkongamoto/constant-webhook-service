@@ -1,0 +1,12 @@
+Hi {{.Name}}, <br /><br />
+
+Great news – we’ve verified your identity and you can now start upgrading your money to Constant.<br/><br/>
+
+<a href="{{.Link}}">Get Constant now</a>
+
+If you have any questions, drop us a line at hello@constant.money.<br/><br/>
+
+Thank you for choosing Constant – the only safe, reliable, and transparent USD-backed stablecoin.<br/><br/>
+
+Thanks  <br />
+The Constant Foundation.
