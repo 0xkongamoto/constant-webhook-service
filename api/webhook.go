@@ -103,28 +103,3 @@ func (s *Server) ConstantWebhook(c *gin.Context) {
 
 	return
 }
-
-// CollateralSellCoinWebhook :...
-func (s *Server) CollateralSellCoinWebhook(c *gin.Context) {
-	var req serializers.CollateralSellCoinRequest
-	if err := c.ShouldBindJSON(&req); err != nil {
-		s.logger.Error("s.ShouldBindJSON", zap.Error(err))
-		return
-	}
-
-	hookData, err := json.Marshal(req)
-	hook := models.Hook{
-		Source: models.HookSourceEvent,
-		Data:   string(hookData),
-		Status: models.HookStatusNew,
-	}
-
-	err = daos.WithDB(func(db *gorm.DB) error {
-		return s.hookSvc.CreateHook(&hook)
-	})
-
-	if err != nil {
-		s.logger.Error("s.hookSvc.CreateHook", zap.Error(err))
-	}
-	//TODO udpate status
-}

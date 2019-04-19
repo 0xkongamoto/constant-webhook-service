@@ -7,7 +7,5 @@ func (s *Server) Routes() {
 		// webhook API group
 		webhook := api.Group("/webhook")
 		webhook.POST("/constant", s.ConstantWebhook)
-
-		api.POST("/sell-coin", s.CollateralSellCoinWebhook)
 	}
 }
